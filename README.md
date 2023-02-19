@@ -17,6 +17,23 @@ We hope that by representing the values of different environmental hazards throu
 
 ## Data Sources:
 
+All of the datasets used in this project are drawn from the environmental health disparities section of the Washington Geospatial Open Data Portal https://geo.wa.gov/. The datasets from the open data portal each essentially describe the prevalence of a certain environmental hazard in all Washington State census tracts for a given year. Included below is a brief description and link to each individual dataset used.
+
+The first [dataset](https://geo.wa.gov/datasets/WADOH::pm2-5-concentration-current-version/about) contains information on the prevalence of pm 2.5 micro meter air pollution within each Washington state census tract.
+
+The second [dataset](https://geo.wa.gov/datasets/WADOH::lead-risk-from-housing-current-version/about 
+) contains information on the number and percentage of housing units in each Washington state census tract that have lead in them.
+
+The third [dataset](https://geo.wa.gov/datasets/WADOH::proximity-to-heavy-traffic-roadways-current-version/about) contains information on the proximity of census tracts to heavy-traffic roadways.
+
+The fourth [dataset](https://geo.wa.gov/datasets/WADOH::ozone-concentration-current-version/about
+) contains information on the ozone concentration of Washington state census tracts.
+
+The fifth [dataset](https://geo.wa.gov/datasets/WADOH::nox-diesel-emissions-annual-tons-km2-current-version/about ) contains information on the diesel emission exposures of each Washington state census tract.
+
+The sixth [dataset](https://geo.wa.gov/datasets/WADOH::toxic-releases-from-facilities-rsei-model-current-version/about ) contains information on the weighted toxic emissions for each Washington state census tract.
+
+
 ## Applied Libraries:
 
 Mapbox
