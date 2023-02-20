@@ -2,6 +2,7 @@
 
 ## Team Members:
 Calvin Standaert - add picture and email?
+Ryan Fournier
 
 ## Project Description:
 
