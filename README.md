@@ -1,8 +1,8 @@
 # Washington Environmental Health Mapping
 
 ## Team Members:
-Calvin Standaert - add picture and email?
-Ryan Fournier
+- Calvin Standaert - add picture and email?
+- Ryan Fournier
 
 ## Project Description:
 
