@@ -4,6 +4,7 @@
 - Calvin Standaert
 - Ryan Fournier
 - Yongjung Lee
+- Lawrence Lorbiecki
 
 ## Project Description:
 
