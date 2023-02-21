@@ -3,6 +3,7 @@
 ## Team Members:
 - Calvin Standaert
 - Ryan Fournier
+- Yongjung Lee
 
 ## Project Description:
 
