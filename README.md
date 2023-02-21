@@ -5,6 +5,7 @@
 - Ryan Fournier
 - Yongjung Lee
 - Lawrence Lorbiecki
+- Nicholas Yu
 
 ## Project Description:
 
