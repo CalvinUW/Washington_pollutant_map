@@ -151,6 +151,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
+                        ['==', ["get", "Percent_Units_with_Lead"], null], //color null values a certain color
+                        '#f5f542',
                         ["step", ["get",
                                 "Percent_Units_with_Lead"
                             ], // else color step based on bins
@@ -200,6 +202,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
+                        ['==', ["get", "Annual_Tons_Km2"], null], //color null values a certain color
+                        '#f5f542',
                         ["step", ["get", "Annual_Tons_Km2"], // else color step based on bins
                             '#fff7ec', // stop_output_0
                             20, // stop_input_0
@@ -247,6 +251,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
+                        ['==', ["get", "Avg_Ozone_Conc_ppb_km2"], null], //color null values a certain color
+                        '#f5f542',
                         ["step", ["get", "Avg_Ozone_Conc_ppb_km2"], // else color step based on bins
                             '#fff7ec', // stop_output_0
                             20, // stop_input_0
@@ -294,6 +300,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
+                        ['==', ["get", "Count_"], null], //color null values a certain color
+                        '#f5f542',
                         ["step", ["get", "Count_"], // else color step based on bins
                             '#fff7ec', // stop_output_0
                             .2, // stop_input_0
@@ -341,6 +349,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
+                        ['==', ["get", "Proximity_to_Heavy_Traffic_Road"], null], //color null values a certain color
+                        '#f5f542',
                         ["step", ["get",
                                 "Proximity_to_Heavy_Traffic_Road"
                             ], // else color step based on bins
@@ -390,6 +400,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
+                        ['==', ["get", "Average_RSEI_Concentrations"], null], //color null values a certain color
+                        '#f5f542',
                         ["step", ["get",
                                 "Average_RSEI_Concentrations"
                             ], // else color step based on bins
