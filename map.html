@@ -3,10 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Display buildings in 3D</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Environmental Hazards In Washington</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -26,7 +31,7 @@
             z-index: 1;
             /* This makes the sidebar appear over the map*/
             background-color: aqua;
-            top: 0;
+            top: 25;
             height: 100%;
             width: 250px;
         }
@@ -36,8 +41,8 @@
             background: #fff;
             position: absolute;
             z-index: 1;
-            top: 10px;
-            right: 10px;
+            bottom: 200px;
+            left: 50px;
             border-radius: 3px;
             width: 120px;
             border: 1px solid rgba(0, 0, 0, 0.4);
@@ -78,13 +83,36 @@
         }
     </style>
 </head>
-
-<body id='map'>
-    <div id="sidebar">
-        <h1> Title Should Go Here </h1>,
-
+<nav class="navbar navbar-static-top navbar-dark navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Washington Environmental Hazard Mapping</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data_info.html">Data Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About Us</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div id="menu"></div>
+</nav>
+
+<body>
+    <div id="sidebar">
+        <div id="menu"></div>
+    </div>
     <div id="map"></div>
     <script>
         mapboxgl.accessToken =
@@ -139,6 +167,7 @@
             map.addLayer({
                 'id': 'lead-extrusion',
                 'type': 'fill-extrusion',
+                'filter': ['!=', ["get", "Census_Tract"], null],
                 'source': 'lead_data',
                 'layout': {
                     'visibility': 'visible'
@@ -151,7 +180,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
-                        ['==', ["get", "Percent_Units_with_Lead"], null], //color null values a certain color
+                        ['==', ["get", "Percent_Units_with_Lead"],
+                        null], //color null values a certain color, testing for now
                         '#f5f542',
                         ["step", ["get",
                                 "Percent_Units_with_Lead"
@@ -183,7 +213,7 @@
                         ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                         13, .5
                     ],
-                    'fill-extrusion-opacity': .8
+                    'fill-extrusion-opacity': .9
                 }
             });
 
@@ -202,7 +232,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
-                        ['==', ["get", "Annual_Tons_Km2"], null], //color null values a certain color
+                        ['==', ["get", "Annual_Tons_Km2"],
+                        null], //color null values a certain color
                         '#f5f542',
                         ["step", ["get", "Annual_Tons_Km2"], // else color step based on bins
                             '#fff7ec', // stop_output_0
@@ -232,7 +263,7 @@
                         ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                         13, .5
                     ],
-                    'fill-extrusion-opacity': .8
+                    'fill-extrusion-opacity': .9
                 }
             });
 
@@ -251,7 +282,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
-                        ['==', ["get", "Avg_Ozone_Conc_ppb_km2"], null], //color null values a certain color
+                        ['==', ["get", "Avg_Ozone_Conc_ppb_km2"],
+                        null], //color null values a certain color
                         '#f5f542',
                         ["step", ["get", "Avg_Ozone_Conc_ppb_km2"], // else color step based on bins
                             '#fff7ec', // stop_output_0
@@ -281,7 +313,7 @@
                         ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                         13, .5
                     ],
-                    'fill-extrusion-opacity': .8
+                    'fill-extrusion-opacity': .9
                 }
             });
 
@@ -330,7 +362,7 @@
                         ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                         13, .5
                     ],
-                    'fill-extrusion-opacity': .8
+                    'fill-extrusion-opacity': .9
                 }
             });
 
@@ -349,7 +381,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
-                        ['==', ["get", "Proximity_to_Heavy_Traffic_Road"], null], //color null values a certain color
+                        ['==', ["get", "Proximity_to_Heavy_Traffic_Road"],
+                        null], //color null values a certain color
                         '#f5f542',
                         ["step", ["get",
                                 "Proximity_to_Heavy_Traffic_Road"
@@ -381,7 +414,7 @@
                         ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                         13, .5
                     ],
-                    'fill-extrusion-opacity': .8
+                    'fill-extrusion-opacity': .9
                 }
             });
 
@@ -400,7 +433,8 @@
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
                         "#00f7ff",
-                        ['==', ["get", "Average_RSEI_Concentrations"], null], //color null values a certain color
+                        ['==', ["get", "Average_RSEI_Concentrations"],
+                        null], //color null values a certain color
                         '#f5f542',
                         ["step", ["get",
                                 "Average_RSEI_Concentrations"
@@ -432,7 +466,7 @@
                         ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                         13, .5
                     ],
-                    'fill-extrusion-opacity': .8,
+                    'fill-extrusion-opacity': .9,
                 }
             });
         });
@@ -495,13 +529,16 @@
 
 
                     for (var j = 0; j < toggleableLayerIds.length; j++) { //Sets layer visibility
-                        if (clickedLayer === toggleableLayerIds[j]) { //if layer clicked is the same as at current index of toggeable layers
+                        if (clickedLayer === toggleableLayerIds[
+                            j]) { //if layer clicked is the same as at current index of toggeable layers
                             layers.children[j].className = 'active'; //set as active css
-                            map.setLayoutProperty(toggleableLayerIds[j], 'visibility', 'visible'); //set layer to visible
+                            map.setLayoutProperty(toggleableLayerIds[j], 'visibility',
+                            'visible'); //set layer to visible
                             current_layer = toggleableLayerIds[j]; // set current layer for click highlight
-                        } else { 
+                        } else {
                             layers.children[j].className = ''; //give default styling
-                            map.setLayoutProperty(toggleableLayerIds[j], 'visibility', 'none'); //set layer to not visible
+                            map.setLayoutProperty(toggleableLayerIds[j], 'visibility',
+                            'none'); //set layer to not visible
                         }
                     }
                 };
@@ -516,11 +553,12 @@
 
             map.on('click', current_layer, function (e) {
                 if (e.features.length > 0) {
-                    if (typeof polygonID === 'number') { // if the polygon id is no longer null (starting condition is null)
-                            map.removeFeatureState({ //remove click feature state (no longer blue colored)
-                                source: current_layer_data[current_layer],
-                                id: polygonID
-                            });
+                    if (typeof polygonID ===
+                        'number') { // if the polygon id is no longer null (starting condition is null)
+                        map.removeFeatureState({ //remove click feature state (no longer blue colored)
+                            source: current_layer_data[current_layer],
+                            id: polygonID
+                        });
                     }
                     polygonID = e.features[0].id; // Get generated ID
 
