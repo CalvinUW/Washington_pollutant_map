@@ -7,6 +7,7 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     z-index: 2;
+    background-color: #0a0a0a;
 }
 
 .navbar>.container,
@@ -21,8 +22,9 @@
     align-items: center;
     justify-content: space-between;
 }
-.navbar-nav > li{
-padding-right: 80px;
+
+.navbar-nav>li {
+    padding-right: 80px;
 }
 
 .nav-link {
@@ -49,4 +51,149 @@ padding-right: 80px;
     color: #6c757d;
     pointer-events: none;
     cursor: default;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/* The sidebar menu */
+.sidebar {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: .8;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.4s;
+    /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #2e2e2e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: aboslute;
+    top: 50%;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .4s;
+    /* If you want a transition effect */
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* the style of the layer control menu */
+#layer_menu {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    bottom: 100px;
+    left: 5px;
+    border-radius: 3px;
+    width: 240px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* each layer on the menu */
+#layer_menu a {
+    font-size: 14px;
+    color: #404040;
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* the last item of the layer items will not include a seperator */
+#layer_menu a:last-child {
+    border: none;
+}
+
+/* change color and background color while a pointer is on an hybrid link. */
+#layer_menu a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+}
+
+#layer_menu a.active {
+    background-color: #3887be;
+    color: #ffffff;
+}
+
+#layer_menu a.active:hover {
+    background: #3074a4;
+}
+
+h1.sidebar_text {
+    color: #f1f1f1;
+    font-size: 25px;
+    padding-left: 10px;
 }
