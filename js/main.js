@@ -460,10 +460,6 @@ map.on('idle', () => {
                     current_layer = toggleableLayerIds[j]; // set current layer for click highlight
                 } else {
                     layers.children[j].className = ''; //give default styling
-                    if (load == 0) {
-                        layers.children[0].className = 'active';
-                        load = load + 1;
-                    }
                     map.setLayoutProperty(toggleableLayerIds[j], 'visibility',
                         'none'); //set layer to not visible
                 }
