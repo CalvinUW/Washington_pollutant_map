@@ -8,7 +8,6 @@ const map = new mapboxgl.Map({
     container: 'map',
     antialias: true,
     projection: 'mercator',
-<<<<<<< HEAD
     pitch: 45, // The angle the map camera starts at
     maxZoom: 12,
     minZoom: 6,
@@ -16,9 +15,6 @@ const map = new mapboxgl.Map({
         [-133.68163130881976, 39.32091789058595],
         [-109.06713519997989, 54.215746760525796]
     ]
-=======
-    pitch: 45 // The angle the map camera starts at
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
 });
 
 map.on('load', function loadingData() {
@@ -84,21 +80,12 @@ map.on('load', function loadingData() {
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
                     "#00f7ff",
-<<<<<<< HEAD
                     ['==', ["get", "normal_lead"],
                         null
                     ], //color null values a certain color, testing for now
                     '#dcdee0',
                     ["step", ["get",
                             "normal_lead"
-=======
-                    ['==', ["get", "Percent_Units_with_Lead"],
-                        null
-                    ], //color null values a certain color, testing for now
-                    '#f5f542',
-                    ["step", ["get",
-                            "Percent_Units_with_Lead"
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                         ], // else color step based on bins
                         '#fff7ec', // stop_output_0
                         10, // stop_input_0
@@ -122,13 +109,8 @@ map.on('load', function loadingData() {
                         "linear"
                     ], // change height as we zoom in (needs to find a standard for all layers)
                     ["zoom"],
-<<<<<<< HEAD
                     0, ["*", ['get', 'normal_lead'],
                         2000
-=======
-                    0, ["*", ['get', 'Percent_Units_with_Lead'],
-                        1000
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                     ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                     13, .5
                 ],
@@ -153,7 +135,6 @@ map.on('load', function loadingData() {
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
                     "#00f7ff",
-<<<<<<< HEAD
                     ['==', ["get", "normal_nox"],
                         null
                     ], //color null values a certain color
@@ -176,42 +157,13 @@ map.on('load', function loadingData() {
                     '#7a0000'
                 ]
             ],
-=======
-                    ['==', ["get", "Annual_Tons_Km2"],
-                        null
-                    ], //color null values a certain color
-                    '#f5f542',
-                    ["step", ["get", "Annual_Tons_Km2"], // else color step based on bins
-                        '#fff7ec', // stop_output_0
-                        20, // stop_input_0
-                        '#fee8c8', // stop_output_1
-                        30, // stop_input_1
-                        '#fdd49e', // stop_output_2
-                        40, // stop_input_2
-                        '#fdbb84', // stop_output_3
-                        50, // stop_input_3
-                        '#fc8d59', // stop_output_4
-                        60, // stop_input_4
-                        '#ef6548', // stop_output_5
-                        70, // stop_input_5
-                        '#d7301f', // stop_output_6
-                        80, // stop_input_6
-                        '#7a0000'
-                    ]
-                ],
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                 'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Annual_Tons_Km2` property
                     "interpolate", [
                         "linear"
                     ], // change height as we zoom in (needs to find a standard for all 
                     ["zoom"],
-<<<<<<< HEAD
                     0, ["*", ['get', 'normal_nox'],
                         2000
-=======
-                    0, ["*", ['get', 'Annual_Tons_Km2'],
-                        1000
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                     ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                     13, .5
                 ],
@@ -236,7 +188,6 @@ map.on('load', function loadingData() {
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
                     "#00f7ff",
-<<<<<<< HEAD
                     ['==', ["get", "normal_ozone"],
                         null
                     ], //color null values a certain color
@@ -259,42 +210,13 @@ map.on('load', function loadingData() {
                     '#7a0000'
                 ]
             ],
-=======
-                    ['==', ["get", "Avg_Ozone_Conc_ppb_km2"],
-                        null
-                    ], //color null values a certain color
-                    '#f5f542',
-                    ["step", ["get", "Avg_Ozone_Conc_ppb_km2"], // else color step based on bins
-                        '#fff7ec', // stop_output_0
-                        20, // stop_input_0
-                        '#fee8c8', // stop_output_1
-                        30, // stop_input_1
-                        '#fdd49e', // stop_output_2
-                        40, // stop_input_2
-                        '#fdbb84', // stop_output_3
-                        50, // stop_input_3
-                        '#fc8d59', // stop_output_4
-                        60, // stop_input_4
-                        '#ef6548', // stop_output_5
-                        70, // stop_input_5
-                        '#d7301f', // stop_output_6
-                        80, // stop_input_6
-                        '#7a0000'
-                    ]
-                ],
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                 'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Avg_Ozone_Conc_ppb_km2` property
                     "interpolate", [
                         "linear"
                     ], // change height as we zoom in (needs to find a standard for all 
                     ["zoom"],
-<<<<<<< HEAD
                     0, ["*", ['get', 'normal_ozone'],
                         2000
-=======
-                    0, ["*", ['get', 'Avg_Ozone_Conc_ppb_km2'],
-                        1000
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                     ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                     13, .5
                 ],
@@ -319,7 +241,6 @@ map.on('load', function loadingData() {
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
                     "#00f7ff",
-<<<<<<< HEAD
                     ['==', ["get", "normal_count"], null], //color null values a certain color
                     '#dcdee0',
                     ["step", ["get", "normal_count"], // else color step based on bins
@@ -340,40 +261,13 @@ map.on('load', function loadingData() {
                     '#7a0000'
                 ]
             ],
-=======
-                    ['==', ["get", "Count_"], null], //color null values a certain color
-                    '#f5f542',
-                    ["step", ["get", "Count_"], // else color step based on bins
-                        '#fff7ec', // stop_output_0
-                        .2, // stop_input_0
-                        '#fee8c8', // stop_output_1
-                        .3, // stop_input_1
-                        '#fdd49e', // stop_output_2
-                        .4, // stop_input_2
-                        '#fdbb84', // stop_output_3
-                        .5, // stop_input_3
-                        '#fc8d59', // stop_output_4
-                        .6, // stop_input_4
-                        '#ef6548', // stop_output_5
-                        .7, // stop_input_5
-                        '#d7301f', // stop_output_6
-                        .8, // stop_input_6
-                        '#7a0000'
-                    ]
-                ],
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                 'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Count_` property
                     "interpolate", [
                         "linear"
                     ], // change height as we zoom in (needs to find a standard for all 
                     ["zoom"],
-<<<<<<< HEAD
                     0, ["*", ['get', 'normal_count'],
                         2000
-=======
-                    0, ["*", ['get', 'Count_'],
-                        100000
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                     ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                     13, .5
                 ],
@@ -398,7 +292,6 @@ map.on('load', function loadingData() {
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
                     "#00f7ff",
-<<<<<<< HEAD
                     ['==', ["get", "normal_traffic"],
                         null
                     ], //color null values a certain color
@@ -420,29 +313,6 @@ map.on('load', function loadingData() {
                         60, // stop_input_5
                         '#d7301f', // stop_output_6
                         70, // stop_input_6
-=======
-                    ['==', ["get", "Proximity_to_Heavy_Traffic_Road"],
-                        null
-                    ], //color null values a certain color
-                    '#f5f542',
-                    ["step", ["get",
-                            "Proximity_to_Heavy_Traffic_Road"
-                        ], // else color step based on bins
-                        '#fff7ec', // stop_output_0
-                        2500, // stop_input_0
-                        '#fee8c8', // stop_output_1
-                        5000, // stop_input_1
-                        '#fdd49e', // stop_output_2
-                        7500, // stop_input_2
-                        '#fdbb84', // stop_output_3
-                        10000, // stop_input_3
-                        '#fc8d59', // stop_output_4
-                        12500, // stop_input_4
-                        '#ef6548', // stop_output_5
-                        15000, // stop_input_5
-                        '#d7301f', // stop_output_6
-                        80000, // stop_input_6
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                         '#7a0000'
                     ]
                 ],
@@ -451,13 +321,8 @@ map.on('load', function loadingData() {
                         "linear"
                     ], // change height as we zoom in (needs to find a standard for all 
                     ["zoom"],
-<<<<<<< HEAD
                     0, ["*", ['get', 'normal_traffic'],
                         2000
-=======
-                    0, ["*", ['get', 'Proximity_to_Heavy_Traffic_Road'],
-                        1
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                     ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                     13, .5
                 ],
@@ -482,7 +347,6 @@ map.on('load', function loadingData() {
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
                     "#00f7ff",
-<<<<<<< HEAD
                     ['==', ["get", "normal_rsei"],
                         null
                     ], //color null values a certain color
@@ -504,29 +368,6 @@ map.on('load', function loadingData() {
                         60, // stop_input_5
                         '#d7301f', // stop_output_6
                         70, // stop_input_6
-=======
-                    ['==', ["get", "Average_RSEI_Concentrations"],
-                        null
-                    ], //color null values a certain color
-                    '#f5f542',
-                    ["step", ["get",
-                            "Average_RSEI_Concentrations"
-                        ], // else color step based on bins
-                        '#fff7ec', // stop_output_0
-                        2000, // stop_input_0
-                        '#fee8c8', // stop_output_1
-                        5000, // stop_input_1
-                        '#fdd49e', // stop_output_2
-                        7500, // stop_input_2
-                        '#fdbb84', // stop_output_3
-                        10000, // stop_input_3
-                        '#fc8d59', // stop_output_4
-                        15000, // stop_input_4
-                        '#ef6548', // stop_output_5
-                        20000, // stop_input_5
-                        '#d7301f', // stop_output_6
-                        60000, // stop_input_6
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                         '#7a0000'
                     ]
                 ],
@@ -535,13 +376,8 @@ map.on('load', function loadingData() {
                         "linear"
                     ], // change height as we zoom in (needs to find a standard for all 
                     ["zoom"],
-<<<<<<< HEAD
                     0, ["*", ['get', 'normal_rsei'],
                         2000
-=======
-                    0, ["*", ['get', 'Average_RSEI_Concentrations'],
-                        2
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                     ], //This expression multiplies data value to determine height of polygon (need to fiddle with these)
                     13, .5
                 ],
@@ -562,11 +398,7 @@ const current_layer_data = { // used to define the source of current layer
     'rsei-extrusion': 'rsei_data'
 };
 
-<<<<<<< HEAD
 const current_layer_var = { //used to get the variable to be shown in popup
-=======
-const current_layer_var = {
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
     'lead-extrusion': 'Percent_Units_with_Lead',
     'nox-extrusion': 'Annual_Tons_Km2',
     'ozone-extrusion': 'Avg_Ozone_Conc_ppb_km2',
@@ -575,7 +407,6 @@ const current_layer_var = {
     'rsei-extrusion': 'Average_RSEI_Concentrations'
 };
 
-<<<<<<< HEAD
 const current_layer_var_text= { //Used in displaying variable names in popup window
     'lead-extrusion': 'Percent of Housing Units Built With Lead:',
     'nox-extrusion': 'Diesel Emission Levels of NOx (Annual Tons/Km2):',
@@ -585,8 +416,6 @@ const current_layer_var_text= { //Used in displaying variable names in popup win
     'rsei-extrusion': 'Average Toxicity-Weighted Concentration of Chemical Pollutants (RSEI):'
 }; 
 
-=======
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
 map.on('idle', () => {
@@ -603,7 +432,6 @@ map.on('idle', () => {
         'ozone-extrusion', 'pm25-extrusion', 'traffic-extrusion', 'rsei-extrusion'
     ];
 
-<<<<<<< HEAD
     const id_text = {
         'lead-extrusion': 'Lead in Housing Units',
         'nox-extrusion': 'Diesel and NOX Emissions',
@@ -613,8 +441,6 @@ map.on('idle', () => {
         'rsei-extrusion': 'Hazardous Chemical Releases'
     };
 
-=======
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
     // Set up the corresponding toggle button for each layer.
     for (const id of toggleableLayerIds) {
         // Skip layers that already have a button set up.
@@ -626,23 +452,14 @@ map.on('idle', () => {
         const link = document.createElement('a');
         link.id = id;
         link.href = '#';
-<<<<<<< HEAD
         link.textContent = id_text[id];
         link.className = 'inactive';
         console.log(id_text[id])
-=======
-        link.textContent = id;
-        link.className = 'inactive';
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
 
         // Show or hide layer when the toggle is clicked.
         link.onclick = function (e) {
 
-<<<<<<< HEAD
             const clickedLayer = this.id;
-=======
-            const clickedLayer = this.textContent;
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
 
             // preventDefault() tells the user agent that if the event does not get explicitly handled, 
             // its default action should not be taken as it normally would be.
@@ -700,11 +517,7 @@ map.on('idle', () => {
             console.log(e.features[0].properties.Census_Tract)
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-<<<<<<< HEAD
                 .setHTML(`<strong>Census Tract:</strong> ${e.features[0].properties.Census_Tract}<br> <strong>${current_layer_var_text[current_layer]}</strong> ${e.features[0].properties[current_layer_var[current_layer]]}`)
-=======
-                .setHTML(`<strong>Census Tract:</strong> ${e.features[0].properties.Census_Tract}<br> <strong>Variable Value:</strong> ${e.features[0].properties[current_layer_var[current_layer]]}`)
->>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
                 .addTo(map);
 
         }
