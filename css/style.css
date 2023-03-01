@@ -78,8 +78,13 @@ body {
     /* Stay on top */
     top: 0;
     left: 0;
+<<<<<<< HEAD
     background-color: #2e2e2e;
     opacity: .9;
+=======
+    background-color: #111;
+    opacity: .8;
+>>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
     /* Black*/
     overflow-x: hidden;
     /* Disable horizontal scroll */
@@ -123,7 +128,10 @@ body {
     border: none;
     position: aboslute;
     top: 50%;
+<<<<<<< HEAD
     opacity: .9;
+=======
+>>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
 }
 
 .openbtn:hover {
@@ -157,19 +165,31 @@ body {
     border-radius: 3px;
     width: 240px;
     border: 1px solid rgba(0, 0, 0, 0.4);
+<<<<<<< HEAD
     font-weight: 600;
+=======
+    font-family: 'Open Sans', sans-serif;
+>>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
 }
 
 /* each layer on the menu */
 #layer_menu a {
     font-size: 14px;
+<<<<<<< HEAD
     color: #000000;
+=======
+    color: #404040;
+>>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
     display: block;
     margin: 0;
     padding: 0;
     padding: 10px;
     text-decoration: none;
+<<<<<<< HEAD
     border-bottom: 1px solid rgba(0, 0, 0, 0.534);
+=======
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+>>>>>>> 763a5dfc0da539b0efa4fe454b6afb09201e6563
     text-align: center;
 }
 
