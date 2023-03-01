@@ -79,7 +79,7 @@ map.on('load', function loadingData() {
                     ['boolean', ["feature-state", 'clicked'],
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
-                    "#00f7ff",
+                    "#1cd4d0",
                     ['==', ["get", "normal_lead"],
                         null
                     ], //color null values a certain color, testing for now
@@ -134,7 +134,7 @@ map.on('load', function loadingData() {
                     ['boolean', ["feature-state", 'clicked'],
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
-                    "#00f7ff",
+                    "#1cd4d0",
                     ['==', ["get", "normal_nox"],
                         null
                     ], //color null values a certain color
@@ -187,7 +187,7 @@ map.on('load', function loadingData() {
                     ['boolean', ["feature-state", 'clicked'],
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
-                    "#00f7ff",
+                    "#1cd4d0",
                     ['==', ["get", "normal_ozone"],
                         null
                     ], //color null values a certain color
@@ -240,7 +240,7 @@ map.on('load', function loadingData() {
                     ['boolean', ["feature-state", 'clicked'],
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
-                    "#00f7ff",
+                    "#1cd4d0",
                     ['==', ["get", "normal_count"], null], //color null values a certain color
                     '#dcdee0',
                     ["step", ["get", "normal_count"], // else color step based on bins
@@ -291,7 +291,7 @@ map.on('load', function loadingData() {
                     ['boolean', ["feature-state", 'clicked'],
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
-                    "#00f7ff",
+                    "#1cd4d0",
                     ['==', ["get", "normal_traffic"],
                         null
                     ], //color null values a certain color
@@ -346,7 +346,7 @@ map.on('load', function loadingData() {
                     ['boolean', ["feature-state", 'clicked'],
                         false
                     ], // If the 'clicked' variable of a feature is true, then color
-                    "#00f7ff",
+                    "#1cd4d0",
                     ['==', ["get", "normal_rsei"],
                         null
                     ], //color null values a certain color

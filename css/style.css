@@ -149,7 +149,7 @@ body {
 
 /* the style of the layer control menu */
 #layer_menu {
-    background: #fff;
+    background: #e0e0e0;
     position: absolute;
     z-index: 1;
     bottom: 100px;
@@ -170,7 +170,7 @@ body {
     padding: 10px;
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.534);
-    text-align: center;
+    text-align: left;
 }
 
 /* the last item of the layer items will not include a seperator */
