@@ -4,17 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Environmental Hazards In Washington</title>
+    <title>Washington Environmental Pollutant Map</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link href="./css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="index-page">
+    <!-- Navigation-->
     <nav class="navbar navbar-dark navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Washington Environmental Hazard Map</a>
+            <a class="navbar-brand" href="#">Washington Environmental Pollutant Map</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,18 +39,116 @@
             </div>
         </div>
     </nav>
-    <h1>Starting Information and Disclaimer Page</h1>
-    <p>It might be a good idea to fill the emptiness of this page with a picture slide show.</p>
-    <h2>Description of the map</h2>
-    <p>Here will be one-two brief paragraphs describing the map, the data sources (brief), the functions, the project github, the context of the map, and why the map was made (project at UW).</p>
-    <h3>Disclaimer:</h3>
-    <p>An additional paragraph should be added to make clear the proper usage of the map (disclaimer).</p>
-    <br>
-    <br>
-    <p>This page should also have a button in the middle to skip to the map</p>
+    <!-- Header-->
+    <header id='top' class="bg-image text-white"
+        style="background-image: url('./img/thom-milkovic-skUTVJi8-jc-unsplash.jpg'); background-position-x: 60%; background-position-y: 60%; height: 500px;">
+        <div class="container px-4 text-center" style="background: #00000059; width: 900px;">
+            <h1 class="fw-bolder" style="font-size: 50px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            ">Washington Environmental Pollutant Map</h1>
+            <p class="lead" style="font-weight: 400; font-size: 25px;   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            ">A three-dimensional map of pollutants in Washington State census
+                tracts</p>
+        </div>
+        <div class="container px-4 text-center">
+        <a class="btn btn-lg btn-light" href="map.html">Go to Map</a>
+        </div>
+        <p class="m-1 text-end text-white" style="position: absolute; top: 500px; right: 20px;"><a href="thommilkovic.com/" style="font-size: 18px; color: aliceblue;     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            "> Seattle, 2017 - Thom Milkovic</a></p>
+    </header>
+    <!-- About section-->
+    <section id="about" style="padding-top: 60px;">
+        <div class="container px-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h2>Map Description:</h2>
+                    <p>This website hosts an interactive web map that shows the values of environmental pollutant
+                        variables in each Washington state census tract. The three-dimensional map represents the values
+                        of a given pollutant in a census tract through both the height and color of each tract’s
+                        representing polygon. The pollutant currently shown in the map can be identified or changed by
+                        clicking on the accompanying sidebar, while further information on a given pollutant in a census
+                        tract can be found by clicking on a tract.
+                        <br>
+                        <br>
+                        The map in this website was made for educational purposes only and is intended to bring
+                        attention to the distribution of pollutants in Washington state, and the possible inequalities
+                        associated with that distribution.
+                        <br>
+                        <br>
+                        This map was created as part of a final project in the Winter 2023 Geography 458: Advanced
+                        Digital Geographies class taught by Professor Bo Zhao at the University of Washington, Seattle.
+                        Further information on the authors, contributors, and acknowledgments can be found on the <a href=about_us.html>about us page</a>.
+
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Map Screenshot:</h3>
+                    <img src="./img/map_screenshot.jpg"
+                        style="width:100%; top: 50%; border:2px solid #000000; padding:3px; margin:5px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sources section-->
+    <section class="bg-light" id="functions">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Data:</h2>
+                    <p class="lead">The data used in this map was gathered from the environmental health disparities
+                        section of the Washington Geospatial Open Data Portal. The variables contained in the data were
+                        normalized using min-max normalization, to allow for easier comparison between different
+                        pollutants. Further information about the data, variables, and treatment can be found on the
+                        <a href=data_info.html>data information page</a>.
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Disclaimer section-->
+    <section id="disclaimer" style="background-color: rgba(252, 0, 50, 0.089);">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2><strong>Disclaimer:</strong></h2>
+                    <p class="lead">The map contained in this website was created as part of an educational exercise and
+                        is not intended to be used to support or inform political, environmental, personal, or other
+                        decision-making processes. Additionally, despite our best efforts for accuracy, all geographical
+                        data and representations of it are constrained by tradeoffs in shape, size, and distance,
+                        meaning that the map may be positionally inaccurate, or incorrect in other ways. <strong> We
+                            assume no
+                            liability for any use of this map, the data contained in it, or its contents.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Code section-->
+    <section class="bg-light" id="code">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Code:</h2>
+                    <p class="lead">This map was developed in Javascript using API from Mapbox GL JS and Bootstrap 5.
+                        All code contained in this project is free to reference or use, and can be found in our
+                        project’s GitHub repository.</p>
+                    <div class="d-flex justify-content-center">
+                        <i class="fab fa-js-square fa-4x"></i>
+                        <i class="fa-brands fa-bootstrap fa-4x" style="left: 50px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-4">
+            <p class="m-1 text-center text-white"><a href=#top style="font-size: 20px;"> Back to top</a></p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
