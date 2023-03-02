@@ -140,23 +140,23 @@ map.on('load', function loadingData() {
                     ], //color null values a certain color
                     '#dcdee0',
                     ["step", ["get", "normal_nox"], // else color step based on bins
-                    '#fff7ec', // stop_output_0
-                    10, // stop_input_0
-                    '#fee8c8', // stop_output_1
-                    20, // stop_input_1
-                    '#fdd49e', // stop_output_2
-                    30, // stop_input_2
-                    '#fdbb84', // stop_output_3
-                    40, // stop_input_3
-                    '#fc8d59', // stop_output_4
-                    50, // stop_input_4
-                    '#ef6548', // stop_output_5
-                    60, // stop_input_5
-                    '#d7301f', // stop_output_6
-                    70, // stop_input_6
-                    '#7a0000'
-                ]
-            ],
+                        '#fff7ec', // stop_output_0
+                        10, // stop_input_0
+                        '#fee8c8', // stop_output_1
+                        20, // stop_input_1
+                        '#fdd49e', // stop_output_2
+                        30, // stop_input_2
+                        '#fdbb84', // stop_output_3
+                        40, // stop_input_3
+                        '#fc8d59', // stop_output_4
+                        50, // stop_input_4
+                        '#ef6548', // stop_output_5
+                        60, // stop_input_5
+                        '#d7301f', // stop_output_6
+                        70, // stop_input_6
+                        '#7a0000'
+                    ]
+                ],
                 'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Annual_Tons_Km2` property
                     "interpolate", [
                         "linear"
@@ -193,23 +193,23 @@ map.on('load', function loadingData() {
                     ], //color null values a certain color
                     '#dcdee0',
                     ["step", ["get", "normal_ozone"], // else color step based on bins
-                    '#fff7ec', // stop_output_0
-                    10, // stop_input_0
-                    '#fee8c8', // stop_output_1
-                    20, // stop_input_1
-                    '#fdd49e', // stop_output_2
-                    30, // stop_input_2
-                    '#fdbb84', // stop_output_3
-                    40, // stop_input_3
-                    '#fc8d59', // stop_output_4
-                    50, // stop_input_4
-                    '#ef6548', // stop_output_5
-                    60, // stop_input_5
-                    '#d7301f', // stop_output_6
-                    70, // stop_input_6
-                    '#7a0000'
-                ]
-            ],
+                        '#fff7ec', // stop_output_0
+                        10, // stop_input_0
+                        '#fee8c8', // stop_output_1
+                        20, // stop_input_1
+                        '#fdd49e', // stop_output_2
+                        30, // stop_input_2
+                        '#fdbb84', // stop_output_3
+                        40, // stop_input_3
+                        '#fc8d59', // stop_output_4
+                        50, // stop_input_4
+                        '#ef6548', // stop_output_5
+                        60, // stop_input_5
+                        '#d7301f', // stop_output_6
+                        70, // stop_input_6
+                        '#7a0000'
+                    ]
+                ],
                 'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Avg_Ozone_Conc_ppb_km2` property
                     "interpolate", [
                         "linear"
@@ -244,23 +244,23 @@ map.on('load', function loadingData() {
                     ['==', ["get", "normal_count"], null], //color null values a certain color
                     '#dcdee0',
                     ["step", ["get", "normal_count"], // else color step based on bins
-                    '#fff7ec', // stop_output_0
-                    10, // stop_input_0
-                    '#fee8c8', // stop_output_1
-                    20, // stop_input_1
-                    '#fdd49e', // stop_output_2
-                    30, // stop_input_2
-                    '#fdbb84', // stop_output_3
-                    40, // stop_input_3
-                    '#fc8d59', // stop_output_4
-                    50, // stop_input_4
-                    '#ef6548', // stop_output_5
-                    60, // stop_input_5
-                    '#d7301f', // stop_output_6
-                    70, // stop_input_6
-                    '#7a0000'
-                ]
-            ],
+                        '#fff7ec', // stop_output_0
+                        10, // stop_input_0
+                        '#fee8c8', // stop_output_1
+                        20, // stop_input_1
+                        '#fdd49e', // stop_output_2
+                        30, // stop_input_2
+                        '#fdbb84', // stop_output_3
+                        40, // stop_input_3
+                        '#fc8d59', // stop_output_4
+                        50, // stop_input_4
+                        '#ef6548', // stop_output_5
+                        60, // stop_input_5
+                        '#d7301f', // stop_output_6
+                        70, // stop_input_6
+                        '#7a0000'
+                    ]
+                ],
                 'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Count_` property
                     "interpolate", [
                         "linear"
@@ -386,6 +386,8 @@ map.on('load', function loadingData() {
         },
         firstSymbolId
     );
+    map.addControl(new mapboxgl.NavigationControl(), 'bottom-right'); // add map controls
+
 });
 
 var current_layer = 'lead-extrusion'; // starting layer
@@ -407,27 +409,19 @@ const current_layer_var = { //used to get the variable to be shown in popup
     'rsei-extrusion': 'Average_RSEI_Concentrations'
 };
 
-const current_layer_var_text= { //Used in displaying variable names in popup window
+const current_layer_var_text = { //Used in displaying variable names in popup window
     'lead-extrusion': 'Percent of Housing Units Built With Lead:',
     'nox-extrusion': 'Diesel Emission Levels of NOx (Annual Tons/Km2):',
     'ozone-extrusion': 'Average Ozone Concentration (ppb/Km2):',
     'pm25-extrusion': 'Average PM 2.5 Pollution Count:',
     'traffic-extrusion': 'Population Estimated to Live Near Busy Roadways:',
     'rsei-extrusion': 'Average Toxicity-Weighted Concentration of Chemical Pollutants (RSEI):'
-}; 
-
-map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+};
 
 map.on('idle', () => {
-    if (!map.getLayer('lead-extrusion') || !map.getLayer('nox-extrusion') || !map.getLayer(
-            'ozone-extrusion') ||
-        !map.getLayer('pm25-extrusion') || !map.getLayer(
-            'traffic-extrusion') || !map.getLayer(
-            'rsei-extrusion')) {
-        return;
-    }
+    
+    var popups = document.getElementsByClassName("mapboxgl-popup");
 
-    // Enumerate ids of the layers.
     const toggleableLayerIds = ['lead-extrusion', 'nox-extrusion',
         'ozone-extrusion', 'pm25-extrusion', 'traffic-extrusion', 'rsei-extrusion'
     ];
@@ -440,6 +434,19 @@ map.on('idle', () => {
         'traffic-extrusion': 'Proximity to Heavy Traffic',
         'rsei-extrusion': 'Hazardous Chemical Releases'
     };
+
+    const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true
+    });
+
+    if (!map.getLayer('lead-extrusion') || !map.getLayer('nox-extrusion') || !map.getLayer(
+            'ozone-extrusion') ||
+        !map.getLayer('pm25-extrusion') || !map.getLayer(
+            'traffic-extrusion') || !map.getLayer(
+            'rsei-extrusion')) {
+        return;
+    }
 
     // Set up the corresponding toggle button for each layer.
     for (const id of toggleableLayerIds) {
@@ -454,13 +461,10 @@ map.on('idle', () => {
         link.href = '#';
         link.textContent = id_text[id];
         link.className = 'inactive';
-        console.log(id_text[id])
 
         // Show or hide layer when the toggle is clicked.
         link.onclick = function (e) {
-
             const clickedLayer = this.id;
-
             // preventDefault() tells the user agent that if the event does not get explicitly handled, 
             // its default action should not be taken as it normally would be.
             e.preventDefault();
@@ -474,7 +478,6 @@ map.on('idle', () => {
                 clickedLayer,
                 'visibility'
             );
-
 
             for (var j = 0; j < toggleableLayerIds.length; j++) { //Sets layer visibility
                 if (clickedLayer === toggleableLayerIds[
@@ -507,21 +510,37 @@ map.on('idle', () => {
                 });
             }
             polygonID = e.features[0].id; // Get generated ID
-
             map.setFeatureState({ //set feature at polyon id to clicked=true, meaning it will become blue colored
                 source: current_layer_data[current_layer],
                 id: polygonID,
             }, {
                 clicked: true
             });
-            console.log(e.features[0].properties.Census_Tract)
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML(`<strong>Census Tract:</strong> ${e.features[0].properties.Census_Tract}<br> <strong>${current_layer_var_text[current_layer]}</strong> ${e.features[0].properties[current_layer_var[current_layer]]}`)
-                .addTo(map);
-
         }
     });
+
+    map.on('styledata', () => { //whenever map layers change styling, only happens when layer visibility is changed
+        popup.remove(); //remove all popups
+        map.removeFeatureState({ //remove click feature state (no longer blue colored)
+            source: current_layer_data[current_layer],
+            id: polygonID
+        });
+    });
+
+    map.on('click', current_layer, function (e) { //when a polygon is clicked on
+        popup_close() //close all other popups
+        popup.setLngLat(e.lngLat) //change popup location
+        popup.setHTML(`<strong>Census Tract:</strong> #${e.features[0].properties.Census_Tract}<br> <strong>${current_layer_var_text[current_layer]}</strong> ${e.features[0].properties[current_layer_var[current_layer]]}`)
+        //change popup text
+        popup.addTo(map); //add to map
+    });
+
+    function popup_close() { // this is a simple function that iterates through all popups and closes them
+        for (var i = 0; i < popups.length; i++) {
+            popups[i].remove();
+        }
+    }
+
 });
 
 // Side bar opening 

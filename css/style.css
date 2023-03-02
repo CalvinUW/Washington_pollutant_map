@@ -198,3 +198,8 @@ h1.sidebar_text {
     font-size: 25px;
     padding-left: 10px;
 }
+
+.mapboxgl-popup-close-button {
+    color: red;
+    font-size: 30px;
+}
