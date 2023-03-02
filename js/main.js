@@ -387,7 +387,6 @@ map.on('load', function loadingData() {
         firstSymbolId
     );
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right'); // add map controls
-
 });
 
 var current_layer = 'lead-extrusion'; // starting layer
@@ -419,7 +418,7 @@ const current_layer_var_text = { //Used in displaying variable names in popup wi
 };
 
 map.on('idle', () => {
-    
+
     var popups = document.getElementsByClassName("mapboxgl-popup");
 
     const toggleableLayerIds = ['lead-extrusion', 'nox-extrusion',
