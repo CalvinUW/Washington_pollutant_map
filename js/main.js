@@ -143,21 +143,21 @@ if (page == 'map-page') {
                         ], //color null values a certain color
                         '#dcdee0',
                         ["step", ["get", "normal_nox"], // else color step based on bins
-                            '#ffffcc', // stop_output_0
+                            '#f7fcfd', // stop_output_0
                             10, // stop_input_0
-                            '#ffeda0', // stop_output_1
+                            '#e5f5f9', // stop_output_1
                             20, // stop_input_1
-                            '#fed976', // stop_output_2
+                            '#ccece6', // stop_output_2
                             30, // stop_input_2
-                            '#feb24c', // stop_output_3
+                            '#99d8c9', // stop_output_3
                             40, // stop_input_3
-                            '#fd8d3c', // stop_output_4
+                            '#66c2a4', // stop_output_4
                             50, // stop_input_4
-                            '#fc4e2a', // stop_output_5
+                            '#41ae76', // stop_output_5
                             60, // stop_input_5
-                            '#e31a1c', // stop_output_6
+                            '#238b45', // stop_output_6
                             70, // stop_input_6
-                            '#b10026'
+                            '#005824'
                         ]
                     ],
                     'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Annual_Tons_Km2` property
@@ -196,21 +196,21 @@ if (page == 'map-page') {
                         ], //color null values a certain color
                         '#dcdee0',
                         ["step", ["get", "normal_ozone"], // else color step based on bins
-                            '#ffffcc', // stop_output_0
+                            '#f7fcfd', // stop_output_0
                             10, // stop_input_0
-                            '#ffeda0', // stop_output_1
+                            '#e0ecf4', // stop_output_1
                             20, // stop_input_1
-                            '#fed976', // stop_output_2
+                            '#bfd3e6', // stop_output_2
                             30, // stop_input_2
-                            '#feb24c', // stop_output_3
+                            '#9ebcda', // stop_output_3
                             40, // stop_input_3
-                            '#fd8d3c', // stop_output_4
+                            '#8c96c6', // stop_output_4
                             50, // stop_input_4
-                            '#fc4e2a', // stop_output_5
+                            '#8c6bb1', // stop_output_5
                             60, // stop_input_5
-                            '#e31a1c', // stop_output_6
+                            '#88419d', // stop_output_6
                             70, // stop_input_6
-                            '#b10026'
+                            '#6e016b'
                         ]
                     ],
                     'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Avg_Ozone_Conc_ppb_km2` property
@@ -247,21 +247,21 @@ if (page == 'map-page') {
                         ['==', ["get", "normal_count"], null], //color null values a certain color
                         '#dcdee0',
                         ["step", ["get", "normal_count"], // else color step based on bins
-                            '#ffffcc', // stop_output_0
+                            '#f7fcf0', // stop_output_0
                             10, // stop_input_0
-                            '#ffeda0', // stop_output_1
+                            '#e0f3db', // stop_output_1
                             20, // stop_input_1
-                            '#fed976', // stop_output_2
+                            '#ccebc5', // stop_output_2
                             30, // stop_input_2
-                            '#feb24c', // stop_output_3
+                            '#a8ddb5', // stop_output_3
                             40, // stop_input_3
-                            '#fd8d3c', // stop_output_4
+                            '#7bccc4', // stop_output_4
                             50, // stop_input_4
-                            '#fc4e2a', // stop_output_5
+                            '#4eb3d3', // stop_output_5
                             60, // stop_input_5
-                            '#e31a1c', // stop_output_6
+                            '#2b8cbe', // stop_output_6
                             70, // stop_input_6
-                            '#b10026'
+                            '#08589e'
                         ]
                     ],
                     'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Count_` property
@@ -302,21 +302,21 @@ if (page == 'map-page') {
                         ["step", ["get",
                                 "normal_traffic"
                             ], // else color step based on bins
-                            '#ffffcc', // stop_output_0
+                            '#fff7f3', // stop_output_0
                             10, // stop_input_0
-                            '#ffeda0', // stop_output_1
+                            '#fde0dd', // stop_output_1
                             20, // stop_input_1
-                            '#fed976', // stop_output_2
+                            '#fcc5c0', // stop_output_2
                             30, // stop_input_2
-                            '#feb24c', // stop_output_3
+                            '#fa9fb5', // stop_output_3
                             40, // stop_input_3
-                            '#fd8d3c', // stop_output_4
+                            '#f768a1', // stop_output_4
                             50, // stop_input_4
-                            '#fc4e2a', // stop_output_5
+                            '#dd3497', // stop_output_5
                             60, // stop_input_5
-                            '#e31a1c', // stop_output_6
+                            '#ae017e', // stop_output_6
                             70, // stop_input_6
-                            '#b10026'
+                            '#7a0177'
                         ]
                     ],
                     'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Proximity_to_Heavy_Traffic_Road` property
@@ -357,21 +357,21 @@ if (page == 'map-page') {
                         ["step", ["get",
                                 "normal_rsei"
                             ], // else color step based on bins
-                            '#ffffcc', // stop_output_0
+                            '#ffffe5', // stop_output_0
                             10, // stop_input_0
-                            '#ffeda0', // stop_output_1
+                            '#fff7bc', // stop_output_1
                             20, // stop_input_1
-                            '#fed976', // stop_output_2
+                            '#fee391', // stop_output_2
                             30, // stop_input_2
-                            '#feb24c', // stop_output_3
+                            '#fec44f', // stop_output_3
                             40, // stop_input_3
-                            '#fd8d3c', // stop_output_4
+                            '#fe9929', // stop_output_4
                             50, // stop_input_4
-                            '#fc4e2a', // stop_output_5
+                            '#ec7014', // stop_output_5
                             60, // stop_input_5
-                            '#e31a1c', // stop_output_6
+                            '#cc4c02', // stop_output_6
                             70, // stop_input_6
-                            '#b10026'
+                            '#8c2d04'
                         ]
                     ],
                     'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Average_RSEI_Concentrations` property
