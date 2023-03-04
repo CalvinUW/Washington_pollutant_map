@@ -416,8 +416,8 @@ if (page == 'map-page') {
         'nox-extrusion': 'Diesel Emission Levels of NOx (Annual Tons/Km2):',
         'ozone-extrusion': 'Average Ozone Concentration (ppb/Km2):',
         'pm25-extrusion': 'Average PM 2.5 Pollution Count:',
-        'traffic-extrusion': 'Population Estimated to Live Near Busy Roadways:',
-        'rsei-extrusion': 'Average Toxicity-Weighted Concentration of Chemical Pollutants (RSEI):'
+        'traffic-extrusion': 'Population Living Near Busy Roadways:',
+        'rsei-extrusion': 'Avg. Toxicity-Weighted Concentration of Chemical Pollutants (RSEI):'
     };
 
     map.on('idle', () => {
@@ -430,7 +430,7 @@ if (page == 'map-page') {
 
         const id_text = {
             'lead-extrusion': 'Lead in Housing Units',
-            'nox-extrusion': 'Diesel and NOX Emissions',
+            'nox-extrusion': 'Diesel and NoX Emissions',
             'ozone-extrusion': 'Ozone Concentrations',
             'pm25-extrusion': 'PM 2.5 Air Pollution Count',
             'traffic-extrusion': 'Proximity to Heavy Traffic',

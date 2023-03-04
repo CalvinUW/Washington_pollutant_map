@@ -79,6 +79,18 @@ h2 {
     padding: 10px;
 }
 
+h3 {
+    padding: 10px;
+}
+
+h4 {
+    padding: 10px;
+}
+
+h6 {
+    padding: 10px;
+}
+
 #map {
     position: absolute;
     top: 0;
