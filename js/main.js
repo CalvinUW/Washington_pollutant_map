@@ -190,7 +190,7 @@ if (page == 'map-page') {
                         ['boolean', ["feature-state", 'clicked'],
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
-                        "#1cd4d0",
+                        "orange",
                         ['==', ["get", "normal_ozone"],
                             null
                         ], //color null values a certain color
@@ -243,7 +243,7 @@ if (page == 'map-page') {
                         ['boolean', ["feature-state", 'clicked'],
                             false
                         ], // If the 'clicked' variable of a feature is true, then color
-                        "#1cd4d0",
+                        "orange",
                         ['==', ["get", "normal_count"], null], //color null values a certain color
                         '#dcdee0',
                         ["step", ["get", "normal_count"], // else color step based on bins
