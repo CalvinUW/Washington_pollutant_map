@@ -162,13 +162,13 @@
     <p style="font-size: 20px; font-family: 'Source', sans-serif;">In order to allow for the data from each dataset to
         be readily comparable across different scales, each variable
         used in the map was normalized using min-max normalization. The normalized values of each variable were then
-        used to get the height and color of census tract polygons. Though the normalized values were used for
-        representing the progression of values, the values displayed on the popup windows of the map are the actual
-        values in the original dataset.
+        used to get the height and color of census tract polygons. In the map, when a census tract is clicked upon the
+        actual pollutant value is shown after the census tract and is then followed by the census tract's normalized
+        value.
         <br>
         <br>
         Aside from min-max normalization, the geometry of the data was clipped using a <a
-            href=”https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html”
+            href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html"
             style="color: black;">
             cartographic boundary map<a> from the United States census bureau. Clipping was performed on the data so as
                 to limit census tract extents to only land area, thereby improving geographic legibility.</p>

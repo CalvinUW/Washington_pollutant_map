@@ -411,6 +411,15 @@ if (page == 'map-page') {
         'rsei-extrusion': 'Average_RSEI_Concentrations'
     };
 
+    const current_layer_var_norm = { //used to get the normalized variable to be shown in popup
+        'lead-extrusion': 'normal_lead',
+        'nox-extrusion': 'normal_nox',
+        'ozone-extrusion': 'normal_ozone',
+        'pm25-extrusion': 'normal_count',
+        'traffic-extrusion': 'normal_traffic',
+        'rsei-extrusion': 'normal_rsei'
+    };
+
     const current_layer_var_text = { //Used in displaying variable names in popup window
         'lead-extrusion': 'Percent of Housing Units Built With Lead:',
         'nox-extrusion': 'Diesel Emission Levels of NOx (Annual Tons/Km2):',
@@ -532,7 +541,7 @@ if (page == 'map-page') {
         map.on('click', current_layer, function (e) { //when a polygon is clicked on
             popup_close() //close all other popups
             popup.setLngLat(e.lngLat) //change popup location
-            popup.setHTML(`<strong>Census Tract:</strong> #${e.features[0].properties.Census_Tract}<br> <strong>${current_layer_var_text[current_layer]}</strong> ${e.features[0].properties[current_layer_var[current_layer]]}`)
+            popup.setHTML(`<strong>Census Tract:</strong> #${e.features[0].properties.Census_Tract}<br> <strong>${current_layer_var_text[current_layer]}</strong> ${e.features[0].properties[current_layer_var[current_layer]]} <br> <strong>Normalized Value: </strong>${e.features[0].properties[current_layer_var_norm[current_layer]]}`)
             //change popup text
             popup.addTo(map); //add to map
         });
