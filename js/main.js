@@ -451,6 +451,40 @@ if (page == 'map-page') {
             closeOnClick: true
         });
 
+        // Fly to event + creates the list of locations one can 'fly to' within Washington state.
+        let list_counties = [];
+        d3.csv('assets/counties_list.csv').then(function(dataset) { 
+            dataset.forEach(function(d) {
+                if (!document.getElementById(d.county)) {
+                    const county_link = document.createElement('option');
+                    county_link.id = d.county;
+                    county_link.textContent = d.county;
+                    county_link.className = 'inactive';
+                    county_link.value = d.coordinate;
+                    county_link.onclick = function(x) {
+                        const clickedCounty = x.target.id;
+                        let coord = x.target.value.split(',');
+
+                        map.jumpTo({
+                            center: [parseFloat(coord[0]), parseFloat(coord[1])],
+                            zoom: 8.5,
+                        });
+
+                        for (var i = 0; i < list_counties.length; i++) {
+                            if (clickedCounty === list_counties[i]) {
+                                dropmenu.children[i].className = 'active';
+                            } else {
+                                dropmenu.children[i].className = '';
+                            }
+                        }
+                    }
+                    const dropmenu = document.getElementById('myDropdown');
+                    dropmenu.appendChild(county_link);
+                }
+            });
+
+        });
+
         if (!map.getLayer('lead-extrusion') || !map.getLayer('nox-extrusion') || !map.getLayer(
                 'ozone-extrusion') ||
             !map.getLayer('pm25-extrusion') || !map.getLayer(
@@ -553,6 +587,29 @@ if (page == 'map-page') {
         }
 
     });
+
+    // Drop menu toggle event for the fly to event
+    function menudrop() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Function for the search bar within the dropdown menu of the fly to event. Filters the list of locations
+    // based on the users input
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("option");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+            } else {
+            a[i].style.display = "none";
+            }
+        }
+    }
 
     // Side bar opening 
     function openNav() {

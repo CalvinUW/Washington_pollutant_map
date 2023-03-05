@@ -62,6 +62,85 @@
     cursor: default;
 }
 
+/* css for the fly to dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.dropbtn {
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto; 
+    padding: 10px;
+    font-weight: 600;
+    width: 240px;
+    text-align: left;
+    background-color: #e0e0e0;
+}
+
+.dropbtn:hover {
+    background-color: #f1f1f1;
+}
+
+#myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    /* background-position: 14px 12px; */
+    /* background-repeat: no-repeat; */
+    width: 100%;
+    font-size: 14px;
+    margin-top: 0px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {
+    outline: 3px solid #ddd;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 230px;
+    overflow: auto;
+    background: #f1f1f1;
+    height: 260px;
+    z-index: 1;
+    border-radius: 3px;
+    width: 240px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+}
+
+.dropdown-content option {
+    color: #000000;
+    padding: 10px 10px;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content option:hover {
+    background-color: #3074a4;
+    color: #ffffff;
+}
+/* 
+.dropdown-content option.active {
+    background-color: #3887be;
+    color: #ffffff;
+}
+
+.dropdown-content option.active:hover {
+    background: #3074a4;
+} */
+
+.show {display: block;}
+
 body {
     margin: 0;
     padding: 0;
@@ -183,10 +262,12 @@ a.closebtn {
 /* the style of the layer control menu */
 #layer_menu {
     background: #e0e0e0;
-    position: absolute;
-    z-index: 1;
+    /* position: absolute;
     bottom: 80px;
-    left: 5px;
+    left: 5px; */
+    margin: 0 auto;
+    margin-top: 10px;
+    z-index: 1;
     border-radius: 3px;
     width: 240px;
     border: 1px solid rgba(0, 0, 0, 0.4);
