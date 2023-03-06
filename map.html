@@ -53,15 +53,15 @@
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h1 class="sidebar_text" style="padding-top: 10px;">Legend:</h1>
+        <h1 class="sidebar_text" style="padding-top: 10px;">Description:</h1>
         <hr style="color: white;">
-        <p style="color: white; padding: 5px; font-size: 15px">This map displays the values of several environmental
+        <p style="color: white; padding: 5px; padding-bottom: 0px; padding-top: 0px; font-size: 15px">This map displays the values of several environmental
             pollutants in
             Washington State census tracts. Information on each pollutant, data sources, and data treatment are
             available
             on our <a id="in_text_link" href="data_info.html" style="color:white">data information page.</a></p>
         <hr style="color: white;">
-        <h1 class="sidebar_text">Fly To Menu</h1>
+        <h1 class="sidebar_text" style="padding-top: 0;">Location Search</h1>
         <div class="dropdown">
             <button onclick="menudrop()" class="dropbtn">Browse Cities</button>
             <div id="myDropdown" class="dropdown-content">
@@ -69,10 +69,10 @@
             </div>
         </div>
         <hr style="color: white;">
-        <h1 class="sidebar_text">Variable Menu</h1>
+        <h1 class="sidebar_text">Pollutant Menu</h1>
         <div id="layer_menu"></div>
     </div>
-
+    <div id="legend"></div>
     <div id="main">
         <button class="openbtn" onclick="openNav()">&#9776; Map Information</button>
     </div>

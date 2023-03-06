@@ -6,13 +6,13 @@ if (page == 'map-page') {
         'pk.eyJ1IjoiY2FsdmludXciLCJhIjoiY2xkMjZmczV1MDBsYjNwcDB0cjI4NjFrMCJ9.VQx5_-ESFCLBxyQS4xqiLg';
     const map = new mapboxgl.Map({
         style: 'mapbox://styles/calvinuw/clekjeejj000801tfbram6nsr',
-        center: [-122.33628494223058, 47.63748628060085], // centered on seattle, may need to be changed
+        center: [-120.83628494223058, 47.63748628060085], // centered on seattle, may need to be changed
         zoom: 6,
         container: 'map',
         antialias: true,
         projection: 'mercator',
         pitch: 45, // The angle the map camera starts at
-        maxZoom: 12,
+        maxZoom: 10.5,
         minZoom: 6,
         maxBounds: [
             [-133.68163130881976, 39.32091789058595],
@@ -86,7 +86,7 @@ if (page == 'map-page') {
                         ['==', ["get", "normal_lead"],
                             null
                         ], //color null values a certain color, testing for now
-                        '#dcdee0',
+                        '#cccecf',
                         ["step", ["get",
                                 "normal_lead"
                             ], // else color step based on bins
@@ -141,7 +141,7 @@ if (page == 'map-page') {
                         ['==', ["get", "normal_nox"],
                             null
                         ], //color null values a certain color
-                        '#dcdee0',
+                        '#cccecf',
                         ["step", ["get", "normal_nox"], // else color step based on bins
                             '#f7fcfd', // stop_output_0
                             10, // stop_input_0
@@ -194,7 +194,7 @@ if (page == 'map-page') {
                         ['==', ["get", "normal_ozone"],
                             null
                         ], //color null values a certain color
-                        '#dcdee0',
+                        '#cccecf',
                         ["step", ["get", "normal_ozone"], // else color step based on bins
                             '#f7fcfd', // stop_output_0
                             10, // stop_input_0
@@ -245,7 +245,7 @@ if (page == 'map-page') {
                         ], // If the 'clicked' variable of a feature is true, then color
                         "orange",
                         ['==', ["get", "normal_count"], null], //color null values a certain color
-                        '#dcdee0',
+                        '#cccecf',
                         ["step", ["get", "normal_count"], // else color step based on bins
                             '#f7fcf0', // stop_output_0
                             10, // stop_input_0
@@ -298,7 +298,7 @@ if (page == 'map-page') {
                         ['==', ["get", "normal_traffic"],
                             null
                         ], //color null values a certain color
-                        '#dcdee0',
+                        '#cccecf',
                         ["step", ["get",
                                 "normal_traffic"
                             ], // else color step based on bins
@@ -353,7 +353,7 @@ if (page == 'map-page') {
                         ['==', ["get", "normal_rsei"],
                             null
                         ], //color null values a certain color
-                        '#dcdee0',
+                        '#cccecf',
                         ["step", ["get",
                                 "normal_rsei"
                             ], // else color step based on bins
@@ -452,15 +452,15 @@ if (page == 'map-page') {
         });
 
         // Fly to event + creates the list of locations one can 'fly to' within Washington state.
-        d3.csv('assets/cities_list.csv').then(function(dataset) { 
-            dataset.forEach(function(d) {
+        d3.csv('assets/cities_list.csv').then(function (dataset) {
+            dataset.forEach(function (d) {
                 if (!document.getElementById(d.city)) {
                     const city_link = document.createElement('option');
                     city_link.id = d.city;
                     city_link.textContent = d.city;
                     city_link.className = 'inactive';
                     city_link.value = d.lat + "," + d.long;
-                    city_link.onclick = function(x) {
+                    city_link.onclick = function (x) {
                         const clickedCity = x.target.id;
                         let coord = x.target.value.split(',');
 
@@ -561,6 +561,7 @@ if (page == 'map-page') {
                 source: current_layer_data[current_layer],
                 id: polygonID
             });
+            make_legend(current_layer)
         });
 
         map.on('click', current_layer, function (e) { //when a polygon is clicked on
@@ -595,9 +596,9 @@ if (page == 'map-page') {
         for (i = 0; i < a.length; i++) {
             txtValue = a[i].textContent || a[i].innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
+                a[i].style.display = "";
             } else {
-            a[i].style.display = "none";
+                a[i].style.display = "none";
             }
         }
     }
@@ -615,7 +616,109 @@ if (page == 'map-page') {
         document.getElementById("main").style.marginLeft = "0";
         document.getElementById("main").style.visibility = 'visible';
     }
-    console.log(page)
+
+    const legend_breaks = [
+        '0-9',
+        '10-19',
+        '20-29',
+        '30-39',
+        '40-49',
+        '50-59',
+        '60-69',
+        '70+',
+        'No data'
+    ];
+
+    const layer_colors = { //dictionary of each layer's color palette
+        'lead-extrusion': [
+            '#ffffcc', // stop_output_0
+            '#ffeda0', // stop_output_1
+            '#fed976', // stop_output_2
+            '#feb24c', // stop_output_3
+            '#fd8d3c', // stop_output_4
+            '#fc4e2a', // stop_output_5
+            '#e31a1c', // stop_output_6
+            '#b10026',
+            '#cccecf'
+        ],
+        'nox-extrusion': [
+            '#f7fcfd', // stop_output_0
+            '#e5f5f9', // stop_output_1
+            '#ccece6', // stop_output_2
+            '#99d8c9', // stop_output_3
+            '#66c2a4', // stop_output_4
+            '#41ae76', // stop_output_5
+            '#238b45', // stop_output_6
+            '#005824',
+            '#cccecf'
+        ],
+        'ozone-extrusion': [
+            '#f7fcfd', // stop_output_0
+            '#e0ecf4', // stop_output_1
+            '#bfd3e6', // stop_output_2
+            '#9ebcda', // stop_output_3
+            '#8c96c6', // stop_output_4
+            '#8c6bb1', // stop_output_5
+            '#88419d', // stop_output_6
+            '#6e016b',
+            '#cccecf'
+        ],
+        'pm25-extrusion': [
+            '#f7fcf0', // stop_output_0
+            '#e0f3db', // stop_output_1
+            '#ccebc5', // stop_output_2
+            '#a8ddb5', // stop_output_3
+            '#7bccc4', // stop_output_4
+            '#4eb3d3', // stop_output_5
+            '#2b8cbe', // stop_output_6
+            '#08589e',
+            '#cccecf'
+        ],
+        'traffic-extrusion': [
+            '#fff7f3', // stop_output_0
+            '#fde0dd', // stop_output_1
+            '#fcc5c0', // stop_output_2
+            '#fa9fb5', // stop_output_3
+            '#f768a1', // stop_output_4
+            '#dd3497', // stop_output_5
+            '#ae017e', // stop_output_6
+            '#7a0177',
+            '#cccecf'
+        ],
+        'rsei-extrusion': [
+            '#ffffe5', // stop_output_0
+            '#fff7bc', // stop_output_1
+            '#fee391', // stop_output_2
+            '#fec44f', // stop_output_3
+            '#fe9929', // stop_output_4
+            '#ec7014', // stop_output_5
+            '#cc4c02', // stop_output_6
+            '#8c2d04',
+            '#cccecf'
+        ]
+    };
+
+    function make_legend(current_layer) { //when called, create legend, givin a layer
+        const legend = document.getElementById('legend');
+        legend.innerHTML = "<strong>Normalized " + current_layer_var_text[current_layer] + "</strong>";
+        
+        legend_breaks.forEach((layer, i) => {
+            const color = layer_colors[current_layer][i];
+            const item = document.createElement('div');
+            const key = document.createElement('span');
+            key.className = 'legend-key';
+            key.style.backgroundColor = color;
+
+            const value = document.createElement('span');
+            value.innerHTML = `${layer}`;
+            item.appendChild(key);
+            item.appendChild(value);
+            legend.appendChild(item);
+
+        });
+    }
+
+    make_legend(current_layer) // create legend of default layer on initial load
     // MAP CODE ABOVE ONLY
 } else if (page == 'index-page') {
     window.addEventListener('DOMContentLoaded', event => {

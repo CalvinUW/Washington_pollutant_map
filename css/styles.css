@@ -342,10 +342,40 @@ h1.sidebar_text {
     color: white;
   }
 
-
-
 td {
     text-align:center;
+}
+
+/* the layout of the legend panel */
+#legend {
+    position: absolute;
+    top: 75px;
+    right: 0px;
+    width: 150px;
+    background: #2e2e2e;
+    opacity: .9;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    padding: 10px 20px 10px 10px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* each line for a break */
+.break {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.legend-key {
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
 }
 /*!
 * Start Bootstrap - Scrolling Nav v5.0.5 (https://startbootstrap.com/template/scrolling-nav)
@@ -439,6 +469,7 @@ body {
 
 hr {
     margin: 1rem 0;
+    margin-top: 15px;
     color: inherit;
     background-color: currentColor;
     border: 0;
