@@ -461,7 +461,7 @@ if (page == 'map-page') {
                     city_link.className = 'inactive';
                     city_link.value = d.lat + "," + d.long;
                     city_link.onclick = function(x) {
-                        const clickedCounty = x.target.id;
+                        const clickedCity = x.target.id;
                         let coord = x.target.value.split(',');
 
                         map.jumpTo({
