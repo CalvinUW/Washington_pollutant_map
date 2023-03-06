@@ -452,16 +452,15 @@ if (page == 'map-page') {
         });
 
         // Fly to event + creates the list of locations one can 'fly to' within Washington state.
-        let list_counties = [];
-        d3.csv('assets/counties_list.csv').then(function(dataset) { 
+        d3.csv('assets/cities_list.csv').then(function(dataset) { 
             dataset.forEach(function(d) {
-                if (!document.getElementById(d.county)) {
-                    const county_link = document.createElement('option');
-                    county_link.id = d.county;
-                    county_link.textContent = d.county;
-                    county_link.className = 'inactive';
-                    county_link.value = d.coordinate;
-                    county_link.onclick = function(x) {
+                if (!document.getElementById(d.city)) {
+                    const city_link = document.createElement('option');
+                    city_link.id = d.city;
+                    city_link.textContent = d.city;
+                    city_link.className = 'inactive';
+                    city_link.value = d.lat + "," + d.long;
+                    city_link.onclick = function(x) {
                         const clickedCounty = x.target.id;
                         let coord = x.target.value.split(',');
 
@@ -470,8 +469,8 @@ if (page == 'map-page') {
                             zoom: 8.5,
                         });
 
-                        for (var i = 0; i < list_counties.length; i++) {
-                            if (clickedCounty === list_counties[i]) {
+                        for (var i = 0; i < d.city.length; i++) {
+                            if (clickedCity === list_counties[i]) {
                                 dropmenu.children[i].className = 'active';
                             } else {
                                 dropmenu.children[i].className = '';
@@ -479,7 +478,7 @@ if (page == 'map-page') {
                         }
                     }
                     const dropmenu = document.getElementById('myDropdown');
-                    dropmenu.appendChild(county_link);
+                    dropmenu.appendChild(city_link);
                 }
             });
 
