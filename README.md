@@ -17,7 +17,29 @@ Though the map is the most essential part of our project, the map is only a sing
 
 ## Screenshots
 
+### Map 1 - Lead in Housing Units
 
+![](img/map1-screenshot.png)
+
+### Map 2 - Diesel and NoX Emissions
+
+![](img/map2-screenshot.png)
+
+### Map 3 - Ozone Concentrations
+
+![](img/map3-screenshot.png)
+
+### Map 4 - PM 2.5 Air Pollution Count
+
+![](img/map4-screenshot.png)
+
+### Map 5 - Proximity to Heavy Traffic
+
+![](img/map5-screenshot.png)
+
+### Map 6 - Hazardous Chemical Releases
+
+![](img/map6-screenshot.png)
 
 
 ## Project Goal:
