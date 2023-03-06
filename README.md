@@ -44,6 +44,8 @@ The sixth [dataset](https://geo.wa.gov/datasets/WADOH::toxic-releases-from-facil
 
 Besides the data from the Washington Geospatial Open Data Portal, a [cartographic boundary map](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) of Washington state land area was used.
 
+For browsing different cities, the coorindates were acquired from the [Maps of World](https://www.mapsofworld.com/usa/states/washington/lat-long.html) and later converted into a CSV file.
+
 
 ## Applied Libraries:
 
@@ -54,6 +56,8 @@ Bootstrap 5
 Google Fonts
 
 Font Awesome
+
+D3 js
 
 ## Other Information:
 
