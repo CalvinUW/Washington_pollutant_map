@@ -468,14 +468,6 @@ if (page == 'map-page') {
                             center: [parseFloat(coord[0]), parseFloat(coord[1])],
                             zoom: 8.5,
                         });
-
-                        for (var i = 0; i < d.city.length; i++) {
-                            if (clickedCity === list_counties[i]) {
-                                dropmenu.children[i].className = 'active';
-                            } else {
-                                dropmenu.children[i].className = '';
-                            }
-                        }
                     }
                     const dropmenu = document.getElementById('myDropdown');
                     dropmenu.appendChild(city_link);
