@@ -584,24 +584,6 @@ if (page == 'map-page') {
 
 
 
-    // Function for the search bar within the dropdown menu of the fly to event. Filters the list of locations
-    // based on the users input
-    function filterFunction() {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("option");
-        for (i = 0; i < a.length; i++) {
-            txtValue = a[i].textContent || a[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                a[i].style.display = "";
-            } else {
-                a[i].style.display = "none";
-            }
-        }
-    }
-
     const legend_breaks = [
         '0-9',
         '10-19',
@@ -750,4 +732,22 @@ function closeNav() {
 // Drop menu toggle event for the fly to event
 function menudrop() {
     document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Function for the search bar within the dropdown menu of the fly to event. Filters the list of locations
+// based on the users input
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("option");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
 }
