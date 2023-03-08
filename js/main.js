@@ -1,6 +1,4 @@
 // MAP CODE BELOW ONLY
-"use strict";
-
 let page = document.body.id;
 
 if (page == 'map-page') {
