@@ -1,4 +1,6 @@
 // MAP CODE BELOW ONLY
+"use strict";
+
 let page = document.body.id;
 
 if (page == 'map-page') {
@@ -580,10 +582,7 @@ if (page == 'map-page') {
 
     });
 
-    // Drop menu toggle event for the fly to event
-    function menudrop() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
+
 
     // Function for the search bar within the dropdown menu of the fly to event. Filters the list of locations
     // based on the users input
@@ -601,20 +600,6 @@ if (page == 'map-page') {
                 a[i].style.display = "none";
             }
         }
-    }
-
-    // Side bar opening 
-    function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.visibility = 'hidden';
-        document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.getElementById("main").style.visibility = 'visible';
     }
 
     const legend_breaks = [
@@ -699,10 +684,9 @@ if (page == 'map-page') {
     };
 
     function make_legend(current_layer) { //when called, create legend, givin a layer
-        "use strict";
         const legend = document.getElementById('legend');
         legend.innerHTML = "<strong>Normalized " + current_layer_var_text[current_layer] + "</strong>";
-        
+
         legend_breaks.forEach((layer, i) => {
             const color = layer_colors[current_layer][i];
             const item = document.createElement('div');
@@ -747,4 +731,23 @@ if (page == 'map-page') {
         });
 
     });
+}
+
+// Side bar opening 
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.visibility = 'hidden';
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("main").style.visibility = 'visible';
+}
+
+// Drop menu toggle event for the fly to event
+function menudrop() {
+    document.getElementById("myDropdown").classList.toggle("show");
 }
