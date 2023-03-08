@@ -699,6 +699,7 @@ if (page == 'map-page') {
     };
 
     function make_legend(current_layer) { //when called, create legend, givin a layer
+        "use strict";
         const legend = document.getElementById('legend');
         legend.innerHTML = "<strong>Normalized " + current_layer_var_text[current_layer] + "</strong>";
         
