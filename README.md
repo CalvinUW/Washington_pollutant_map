@@ -87,6 +87,8 @@ To allow for the data from each dataset to be readily comparable across differen
 
 Aside from min-max normalization, the geometry of the data was clipped using a cartographic boundary map from the United States census bureau. Clipping was performed on the data to limit census tract extent to only land areas, thereby improving geographic legibility.
 
+The website of this project is best viewed in Google Chrome, Firefox, or Microsoft Edge. While the website and map contained in it can run on other browsers, certain map and website elements may be missing, dysfunctional, or otherwise improperly displayed.
+
 ## Acknowledgement:
 
 We would like to thank our teacher, Professor Zhao, and our teaching assistant, Xiaoqi Bao for their help throughout the development process.
