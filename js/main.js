@@ -143,21 +143,21 @@ if (page == 'map-page') {
                         ], //color null values a certain color
                         '#cccecf',
                         ["step", ["get", "normal_nox"], // else color step based on bins
-                            '#f7fcfd', // stop_output_0
+                            '#ffffe5', // stop_output_0
                             10, // stop_input_0
-                            '#e5f5f9', // stop_output_1
+                            '#d9f0a3', // stop_output_1
                             20, // stop_input_1
-                            '#ccece6', // stop_output_2
+                            '#addd8e', // stop_output_2
                             30, // stop_input_2
-                            '#99d8c9', // stop_output_3
+                            '#78c679', // stop_output_3
                             40, // stop_input_3
-                            '#66c2a4', // stop_output_4
+                            '#41ab5d', // stop_output_4
                             50, // stop_input_4
-                            '#41ae76', // stop_output_5
+                            '#238443', // stop_output_5
                             60, // stop_input_5
-                            '#238b45', // stop_output_6
+                            '#006837', // stop_output_6
                             70, // stop_input_6
-                            '#005824'
+                            '#004529'
                         ]
                     ],
                     'fill-extrusion-height': [ // Get `fill-extrusion-height` from the source `Annual_Tons_Km2` property
@@ -607,14 +607,14 @@ if (page == 'map-page') {
             '#cccecf'
         ],
         'nox-extrusion': [
-            '#f7fcfd', // stop_output_0
-            '#e5f5f9', // stop_output_1
-            '#ccece6', // stop_output_2
-            '#99d8c9', // stop_output_3
-            '#66c2a4', // stop_output_4
-            '#41ae76', // stop_output_5
-            '#238b45', // stop_output_6
-            '#005824',
+            '#ffffe5', // stop_output_0
+            '#d9f0a3', // stop_output_1
+            '#addd8e', // stop_output_2
+            '#78c679', // stop_output_3
+            '#41ab5d', // stop_output_4
+            '#238443', // stop_output_5
+            '#006837', // stop_output_6
+            '#004529',
             '#cccecf'
         ],
         'ozone-extrusion': [
